@@ -1,9 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing.module';
+import { ReporteComponent } from './reporte/reporte.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { AppComponent } from './app.component';
+
+
 
 @NgModule({
   declarations: [
@@ -11,10 +15,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

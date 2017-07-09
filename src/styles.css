@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+.main-container{
+  margin-top: 40px;
+}
+.title{
+  border:1px solid #2e6da4;
+  background-color: #337ab7;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  box-shadow: 1px 2px 3px 1px rgba(0,0,0,0.3);
+}
+
+textarea[name="descripcion_actividad"]{
+  resize: none;
+}
+
+.not-found{
+  position: relative;
+  top: 100px;
+}

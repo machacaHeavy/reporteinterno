@@ -1,0 +1,135 @@
+<div [@routerAnimation]="routerAnimation">
+  <div class="row title">
+    <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      REPORTE INTERNO A OFICIAL DE CUMPLIMIENTO
+    </div>
+  </div>
+
+  <div class="container main-container">
+    <!-- HEADER -->
+    <div class="row title">
+      <div class="text-left col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        PORTAL DE REPORTES
+      </div>
+      <div class="text-right col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        FECHA DE REPORTE {{fechaReporte || 'Cargando...'}}
+      </div>
+    </div>
+
+    <!-- TIPO DE REPORTE, CLAVE DE OPERACION, TIPO DE OPERACION -->
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <select name="tipo_reporte" class="form-control" #tipoReporte (change)="validarTipoReporte(tipoReporte.value)">
+            <option value="">Tipo de reporte</option>
+            <option value="1">Preocupante</option>
+            <option value="2">Inusual</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="input-group">
+          <input type="text" autocomplete="off" name="clave_operacion" class="form-control" placeholder="Clave de operación">
+          <span class="input-group-btn">
+            <button class="btn btn-default" [disabled]="tipoInusual" type="button">Consultar</button>
+          </span>
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <select name="tipo_transaccion" class="form-control">
+            <option value="">Tipo de transacción</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <button type="button" class="btn btn-sm btn-default form-control">Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FECHA Y TIENDA DE OPERACION -->
+    <div class="row title">
+      <div class="text-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        EMPLEADO REPORTADO
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="form-group">
+            <input type="text" autocomplete="off" class="form-control" placeholder="Fecha de operación" name="fecha_operacion">
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="form-group">
+            <input type="text" autocomplete="off" class="form-control" placeholder="Número de tienda" name="numero_tienda">
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
+    </div>
+    <!-- NOMBRE -->
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <input type="text" autocomplete="off" class="form-control" placeholder="Primer nombre" name="primer_nombre">
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <input type="text" autocomplete="off" class="form-control" placeholder="Segundo nombre" name="segundo_nombre">
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <input type="text" autocomplete="off" class="form-control" placeholder="Primer apellido" name="primer_apellido">
+        </div>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <input type="text" autocomplete="off" class="form-control" placeholder="Segundo apellido" name="segundo_apellido">
+        </div>
+      </div>
+    </div>
+
+    <!-- DESCRIPCION DE LA ACTIVIDAD -->
+    <div class="row title">
+      <div class="text-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        DESCRIPCIÓN DE LA ACTIVIDAD A REPORTAR
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group">
+          <textarea name="descripcion_actividad" class="form-control" autocomplete="off" placeholder="Descripción"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPO DE DENUNCIA -->
+    <div class="row title">
+      <div class="text-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        TIPO DE DENUNCIA
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="form-group">
+          <select name="tipo_denuncia" class="form-control">
+            <option value="">¿Desea hacer una denuncia anónima?</option>
+            <option value="1">Sí</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCIONES -->
+    <div class="row">
+      <div class="text-center col-sx-12 col-sm-12 col-md-12 col-lg-12">
+        <button class="btn btn-primary">Cancelar</button>
+        <button class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
